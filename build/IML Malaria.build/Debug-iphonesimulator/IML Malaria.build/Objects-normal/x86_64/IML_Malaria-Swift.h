@@ -181,6 +181,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -214,27 +215,57 @@ SWIFT_CLASS("_TtC11IML_Malaria11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC11IML_Malaria16DesignableButton")
+@interface DesignableButton : UIButton
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11IML_Malaria15DesignableLabel")
+@interface DesignableLabel : UILabel
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11IML_Malaria19DesignableTextFeild")
+@interface DesignableTextFeild : UITextField
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11IML_Malaria14DesignableView")
+@interface DesignableView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIImageView;
-@class UILabel;
-@class UIButton;
 @class UIImagePickerController;
 @class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC11IML_Malaria14MainController")
 @interface MainController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified userDp;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cellCountLbl;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified cellCount;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified malariaCountLbl;
 - (void)viewDidLoad;
 - (IBAction)camBtnPressedWith_btn:(UIButton * _Nonnull)_btn;
 - (IBAction)countCellBtn:(UIButton * _Nonnull)sender;
 - (IBAction)CheckSingleCell:(UIButton * _Nonnull)sender;
+- (IBAction)analyzeMalariaAction:(id _Nonnull)sender;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController * _Nonnull)picker;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 
 
@@ -252,12 +283,14 @@ SWIFT_CLASS("_TtC11IML_Malaria16MalariaTableView")
 @interface MalariaTableView (SWIFT_EXTENSION(IML_Malaria)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 SWIFT_CLASS("_TtC11IML_Malaria20MalariaTableViewCell")
 @interface MalariaTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified malariaImageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified confidenceLbl;
 - (void)awakeFromNib;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
@@ -280,6 +313,18 @@ SWIFT_CLASS("_TtC11IML_Malaria13SceneDelegate")
 @end
 
 
+
+@class UIColor;
+
+@interface UIView (SWIFT_EXTENSION(IML_Malaria))
+@property (nonatomic) CGFloat cornerRadius;
+@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic, strong) UIColor * _Nullable borderColor;
+@property (nonatomic) CGFloat shadowRadius;
+@property (nonatomic) float shadowOpacity;
+@property (nonatomic) CGSize shadowOffset;
+@property (nonatomic, strong) UIColor * _Nullable shadowColor;
+@end
 
 
 SWIFT_CLASS("_TtC11IML_Malaria9Utilities")

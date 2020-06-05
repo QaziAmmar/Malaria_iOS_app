@@ -7,12 +7,14 @@ provides-member:
 - ["11IML_Malaria0B13TableViewCellC", ""]
 provides-dynamic-lookup:
 - "awakeFromNib"
+- "confidenceLbl"
 - "malariaImageView"
 - "setSelected"
 depends-top-level:
 - "Bool"
 - "MalariaTableViewCell"
 - "UIImageView"
+- "UILabel"
 - "UITableViewCell"
 depends-member:
 - ["So15CALayerDelegateP", ""]
@@ -41,7 +43,9 @@ depends-member:
 - !private ["SH", "setSelected"]
 - ["11IML_Malaria0B13TableViewCellC", "Bool"]
 - ["11IML_Malaria0B13TableViewCellC", "UIImageView"]
+- ["11IML_Malaria0B13TableViewCellC", "UILabel"]
 - ["11IML_Malaria0B13TableViewCellC", "awakeFromNib"]
+- ["11IML_Malaria0B13TableViewCellC", "confidenceLbl"]
 - ["11IML_Malaria0B13TableViewCellC", "deinit"]
 - ["11IML_Malaria0B13TableViewCellC", "init"]
 - ["11IML_Malaria0B13TableViewCellC", "malariaImageView"]
@@ -52,7 +56,9 @@ depends-member:
 - !private ["So8NSCodingP", "setSelected"]
 - ["So8NSObjectC", "Bool"]
 - ["So8NSObjectC", "UIImageView"]
+- ["So8NSObjectC", "UILabel"]
 - ["So8NSObjectC", "awakeFromNib"]
+- ["So8NSObjectC", "confidenceLbl"]
 - ["So8NSObjectC", "init"]
 - ["So8NSObjectC", "malariaImageView"]
 - ["So8NSObjectC", "setSelected"]
@@ -106,7 +112,9 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "setSelected"]
 - ["So11UIResponderC", "Bool"]
 - ["So11UIResponderC", "UIImageView"]
+- ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "awakeFromNib"]
+- ["So11UIResponderC", "confidenceLbl"]
 - ["So11UIResponderC", "init"]
 - ["So11UIResponderC", "malariaImageView"]
 - ["So11UIResponderC", "setSelected"]
@@ -116,8 +124,10 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "setSelected"]
 - ["So15UITableViewCellC", "Bool"]
 - ["So15UITableViewCellC", "UIImageView"]
+- ["So15UITableViewCellC", "UILabel"]
 - ["So15UITableViewCellC", ""]
 - ["So15UITableViewCellC", "awakeFromNib"]
+- ["So15UITableViewCellC", "confidenceLbl"]
 - ["So15UITableViewCellC", "init"]
 - ["So15UITableViewCellC", "malariaImageView"]
 - ["So15UITableViewCellC", "setSelected"]
@@ -131,7 +141,9 @@ depends-member:
 - !private ["So23UIUserActivityRestoringP", "setSelected"]
 - ["So6UIViewC", "Bool"]
 - ["So6UIViewC", "UIImageView"]
+- ["So6UIViewC", "UILabel"]
 - ["So6UIViewC", "awakeFromNib"]
+- ["So6UIViewC", "confidenceLbl"]
 - ["So6UIViewC", "init"]
 - ["So6UIViewC", "malariaImageView"]
 - ["So6UIViewC", "setSelected"]
@@ -1418,4 +1430,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "20a3b0ed15995d8ea3cdeed41bbe9d29"
+interface-hash: "96709410c935236998fb9b75fc0df454"

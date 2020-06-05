@@ -16,6 +16,8 @@
 		7A5B3F50243F3B7000A9AE3F /* MalariaPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B3F4F243F3B7000A9AE3F /* MalariaPrediction.swift */; };
 		7A5B3F5324406A4600A9AE3F /* MalariaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B3F5224406A4600A9AE3F /* MalariaTableView.swift */; };
 		7A5B3F5524406BA100A9AE3F /* MalariaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B3F5424406BA100A9AE3F /* MalariaTableViewCell.swift */; };
+		7ABB75632489271A009AA56A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB75622489271A009AA56A /* Extension.swift */; };
+		7ABB75652489349C009AA56A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABB75642489349C009AA56A /* CustomView.swift */; };
 		7ACE2E9C242B6EC5000FB49E /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACE2E9B242B6EC5000FB49E /* ImageModel.swift */; };
 		7AD0CA72241A8C8600CE0EB3 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0CA71241A8C8600CE0EB3 /* MainController.swift */; };
 		E47078190D22036E34747DB4 /* libPods-IML Malaria.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C087FD8634B491B3534555 /* libPods-IML Malaria.a */; };
@@ -35,6 +37,8 @@
 		7A5B3F4F243F3B7000A9AE3F /* MalariaPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalariaPrediction.swift; sourceTree = "<group>"; };
 		7A5B3F5224406A4600A9AE3F /* MalariaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalariaTableView.swift; sourceTree = "<group>"; };
 		7A5B3F5424406BA100A9AE3F /* MalariaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalariaTableViewCell.swift; sourceTree = "<group>"; };
+		7ABB75622489271A009AA56A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7ABB75642489349C009AA56A /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		7ACE2E9B242B6EC5000FB49E /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		7AD0CA71241A8C8600CE0EB3 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		E0C087FD8634B491B3534555 /* libPods-IML Malaria.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IML Malaria.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,12 +79,14 @@
 			children = (
 				7A5B3F5124406A1B00A9AE3F /* malariaList */,
 				7A5B3F4E243F3B3D00A9AE3F /* Models */,
+				7ABB7561248915DB009AA56A /* DesignView */,
 				7AD0CA6A241A8C3800CE0EB3 /* SelectImageVC */,
 				1DD87B00241A6D9700271223 /* Utilities.swift */,
 				1DD87AEC241A6B6E00271223 /* AppDelegate.swift */,
 				1DD87AEE241A6B6E00271223 /* SceneDelegate.swift */,
 				7AD0CA71241A8C8600CE0EB3 /* MainController.swift */,
 				7ACE2E9B242B6EC5000FB49E /* ImageModel.swift */,
+				7ABB75622489271A009AA56A /* Extension.swift */,
 				1DD87AF2241A6B6E00271223 /* Main.storyboard */,
 				1DD87AF5241A6B6F00271223 /* Assets.xcassets */,
 				1DD87AF7241A6B6F00271223 /* LaunchScreen.storyboard */,
@@ -113,6 +119,14 @@
 				7A5B3F5424406BA100A9AE3F /* MalariaTableViewCell.swift */,
 			);
 			path = malariaList;
+			sourceTree = "<group>";
+		};
+		7ABB7561248915DB009AA56A /* DesignView */ = {
+			isa = PBXGroup;
+			children = (
+				7ABB75642489349C009AA56A /* CustomView.swift */,
+			);
+			path = DesignView;
 			sourceTree = "<group>";
 		};
 		7AD0CA6A241A8C3800CE0EB3 /* SelectImageVC */ = {
@@ -228,10 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABB75632489271A009AA56A /* Extension.swift in Sources */,
 				7A5B3F50243F3B7000A9AE3F /* MalariaPrediction.swift in Sources */,
 				7A5B3F5324406A4600A9AE3F /* MalariaTableView.swift in Sources */,
 				1DD87AED241A6B6E00271223 /* AppDelegate.swift in Sources */,
 				1DD87B01241A6D9700271223 /* Utilities.swift in Sources */,
+				7ABB75652489349C009AA56A /* CustomView.swift in Sources */,
 				7AD0CA72241A8C8600CE0EB3 /* MainController.swift in Sources */,
 				7ACE2E9C242B6EC5000FB49E /* ImageModel.swift in Sources */,
 				1DD87AEF241A6B6E00271223 /* SceneDelegate.swift in Sources */,

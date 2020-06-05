@@ -8,5 +8,6 @@ target 'IML Malaria' do
   # Pods for IML Malaria
   pod 'Alamofire'
   pod 'MBProgressHUD'
+#  pod "ViewAnimator"
 
 end

@@ -14,23 +14,27 @@ import Alamofire
 class MainController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var userDp  : UIImageView!
-//    @IBOutlet weak var predictionLbl: UILabel!
+    //    @IBOutlet weak var predictionLbl: UILabel!
     @IBOutlet weak var cellCountLbl: UILabel!
     //    @IBOutlet weak var confidanceLbl: UILabel!
     @IBOutlet weak var cellCount: UILabel!
+    @IBOutlet weak var malariaCountLbl: UILabel!
     
-    var pressButton = UIButton()
+    
     
     var imagePicker = UIImagePickerController()
-    var imagePicked: UIImage!
-    var imageModel: ImagesModel!
-    var imagePoints: [ImagePoint]!
+    var selectedGalleryImage: UIImage!
+    var responceImageModel: ImagesModel!
+    var malariaObjs : [ImagePoint]?
+    var healtyaObjs : [ImagePoint]?
+    private var allMalariaCropsImages : [UIImage] = []
+    private var maConfidenceNo : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.imagePicker.delegate = self
-        cellCountLbl.isHidden = true
+        //        cellCountLbl.isHidden = true
     }
     
     @IBAction func camBtnPressed(_btn: UIButton) {
@@ -84,9 +88,25 @@ class MainController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func CheckSingleCell(_ sender: UIButton) {
-        checkMalaria()
+        //        checkMalaria()
+        guard let totalCell = malariaObjs?.count else {print("no cell");return}
+        malariaCountLbl.text = String(totalCell)
     }
     
+    
+    @IBAction func analyzeMalariaAction(_ sender: Any) {
+        
+        if allMalariaCropsImages.count > 0 {
+                
+                guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MalariaTableView") as? MalariaTableView else {print("no vc");return}
+                vc.malariaImage = allMalariaCropsImages
+                vc.maConfidenceNo = maConfidenceNo
+                show(vc, sender: sender)
+        }else {
+            // show alart here
+        
+        }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -95,8 +115,8 @@ class MainController: UIViewController, UINavigationControllerDelegate, UIImageP
         {
             let img = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage?)!.byFixingOrientation()
             //            self.imagePicked = Utilities.resizeImage(image: img, newWidth: 1024)
-            self.imagePicked = img
-            self.userDp.image = self.imagePicked
+            self.selectedGalleryImage = img
+            self.userDp.image = self.selectedGalleryImage
             
             
         }
@@ -111,59 +131,59 @@ class MainController: UIViewController, UINavigationControllerDelegate, UIImageP
 extension MainController {
     
     
-    func checkMalaria()  {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        let url = "http://192.168.1.5:8000/api/check_malaria/"
-        
-        do{
-            Alamofire.upload(multipartFormData: { (multipartFormData) in
-                if self.imagePicked != nil {
-                    if let imageData = self.imagePicked.jpegData(compressionQuality: 0) {
-                        multipartFormData.append(imageData, withName: "file", fileName: "image.png", mimeType: Utilities.getImageMimieType(data: imageData))
-                    }
-                }
-            }, usingThreshold: UInt64.init(), to: url, method: .post, headers:[:]) { (encodingResult) in
-                
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    
-                    upload.responseData(completionHandler: { (response) in
-                        MBProgressHUD.hide(for: self.view, animated: true)
-                        
-                        switch response.result {
-                        case .success(let value):
-                            
-                            let decoder = JSONDecoder()
-                            do{
-                                _ = try decoder.decode(MalariaPrediction.self, from: value)
-                                self.updateLbl(image: self.imagePicked)
-                                
-                            }catch let error {
-                                print(error)
-                            }
-                            
-                        case .failure(let error):
-                            print(error)
-                        }
-                        
-                    })
-                    
-                case .failure(_):
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                }
-            }
-        }
-    }
+    //    func checkMalaria()  {
+    //        MBProgressHUD.showAdded(to: self.view, animated: true)
+    //        let url = "http://192.168.1.7:8000/api/check_malaria/"
+    //
+    //        do{
+    //            Alamofire.upload(multipartFormData: { (multipartFormData) in
+    //                if self.imagePicked != nil {
+    //                    if let imageData = self.imagePicked.jpegData(compressionQuality: 0) {
+    //                        multipartFormData.append(imageData, withName: "file", fileName: "image.png", mimeType: Utilities.getImageMimieType(data: imageData))
+    //                    }
+    //                }
+    //            }, usingThreshold: UInt64.init(), to: url, method: .post, headers:[:]) { (encodingResult) in
+    //
+    //                switch encodingResult {
+    //                case .success(let upload, _, _):
+    //
+    //                    upload.responseData(completionHandler: { (response) in
+    //                        MBProgressHUD.hide(for: self.view, animated: true)
+    //
+    //                        switch response.result {
+    //                        case .success(let value):
+    //
+    //                            let decoder = JSONDecoder()
+    //                            do{
+    //                                _ = try decoder.decode(MalariaPrediction.self, from: value)
+    //                                self.updateLbl(image: self.imagePicked)
+    //
+    //                            }catch let error {
+    //                                print(error)
+    //                            }
+    //
+    //                        case .failure(let error):
+    //                            print(error)
+    //                        }
+    //
+    //                    })
+    //
+    //                case .failure(_):
+    //                    MBProgressHUD.hide(for: self.view, animated: true)
+    //                }
+    //            }
+    //        }
+    //    }
     
     func countCells() {
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        let url = "http://192.168.1.5:8000/api/test/"
+        let url = "http://192.168.1.6:8000/api/test/"
         
         do{
             Alamofire.upload(multipartFormData: { (multipartFormData) in
-                if self.imagePicked != nil {
-                    if let imageData = self.imagePicked.jpegData(compressionQuality: 0) {
+                if self.selectedGalleryImage != nil {
+                    if let imageData = self.selectedGalleryImage.jpegData(compressionQuality: 0) {
                         multipartFormData.append(imageData, withName: "file", fileName: "image.png", mimeType: Utilities.getImageMimieType(data: imageData))
                     }
                 }
@@ -201,47 +221,67 @@ extension MainController {
         }
     }
     
-    func updateLbl(image: UIImage) {
-
-        let imageSize = image.size
-        let scale: CGFloat = 0
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
-        let context = UIGraphicsGetCurrentContext()
-        image.draw(at: CGPoint.zero)
-        let tempPoint = self.imagePoints[10...15]
-        for point in tempPoint {
-            
-            
-            let rectangle = CGRect(x: point.x!, y: point.y!, width: point.w!, height: point.h!)
-            
-            context!.setStrokeColor(UIColor.red.cgColor)
-            context!.setLineWidth(2)
-            context?.setFillColor(red: 255, green: 255, blue: 255, alpha: 0)
-            context!.addRect(rectangle)
-            context!.drawPath(using: .stroke)
-            
-        }
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        userDp.image = newImage
-        
-    }
+    //    func updateLbl(image: UIImage) {
+    //
+    //        let imageSize = image.size
+    //        let scale: CGFloat = 0
+    //        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+    //        let context = UIGraphicsGetCurrentContext()
+    //        image.draw(at: CGPoint.zero)
+    //        let tempPoint = self.imagePoints[10...15]
+    //        for point in tempPoint {
+    //
+    //
+    //            let rectangle = CGRect(x: point.x!, y: point.y!, width: point.w!, height: point.h!)
+    //
+    //            context!.setStrokeColor(UIColor.red.cgColor)
+    //            context!.setLineWidth(2)
+    //            context?.setFillColor(red: 255, green: 255, blue: 255, alpha: 0)
+    //            context!.addRect(rectangle)
+    //            context!.drawPath(using: .stroke)
+    //
+    //        }
+    //
+    //        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    //        UIGraphicsEndImageContext()
+    //        userDp.image = newImage
+    //
+    //    }
     
     
     func updateImage(model: ImagesModel) {
+        
+        allMalariaCropsImages.removeAll() // Before prossing new image , remove periovus data
+        
         let image = userDp.image
         let imageSize = image?.size
         let scale: CGFloat = 0
         UIGraphicsBeginImageContextWithOptions(imageSize!, false, scale)
         let context = UIGraphicsGetCurrentContext()
         image?.draw(at: CGPoint.zero)
-        self.imagePoints = (model.data?.imagePoints!)!
-        for point in (model.data?.imagePoints!)! {
+        
+        
+        healtyaObjs = model.data?.imagePoints?.filter({$0.prediction == "healthy"})
+        malariaObjs = model.data?.imagePoints?.filter({$0.prediction == "malaria"})
+        
+        
+        for point in (healtyaObjs)! {
             let rectangle = CGRect(x: point.x!, y: point.y!, width: point.w!, height: point.h!)
             
-            context!.setStrokeColor(UIColor.black.cgColor)
-            context!.setLineWidth(2)
+            
+            context!.setStrokeColor(red: 0.020,green: 0.386,blue: 0.000,alpha: 1)
+            context!.setLineWidth(3)
+            context?.setFillColor(red: 255, green: 255, blue: 255, alpha: 0)
+            context!.addRect(rectangle)
+            context!.drawPath(using: .stroke)
+            
+        }
+        
+        for point in (malariaObjs)! {
+            let rectangle = CGRect(x: point.x!, y: point.y!, width: point.w!, height: point.h!)
+            
+            context!.setStrokeColor(UIColor.red.cgColor)
+            context!.setLineWidth(3)
             context?.setFillColor(red: 255, green: 255, blue: 255, alpha: 0)
             context!.addRect(rectangle)
             context!.drawPath(using: .stroke)
@@ -254,63 +294,27 @@ extension MainController {
         cellCountLbl.isHidden = false
         cellCount.text = String(describing: model.data?.imagePoints?.count ?? 0)
         
-        
+        // this funcation use for to crop images from main image
+        guard let malariaObj = malariaObjs else {print("no obje");return}
+        seperat(malariaPoints: malariaObj)
     }
 }
-
-
-extension UIImage {
-    
-    func byFixingOrientation(andResizingImageToNewSize newSize: CGSize? = nil) -> UIImage {
+//MARK:- Crop Malaira Image
+extension MainController {
+    func seperat(malariaPoints : [ImagePoint]){
         
-        guard let cgImage = self.cgImage else { return self }
-        
-        let orientation = self.imageOrientation
-        guard orientation != .up else { return UIImage(cgImage: cgImage, scale: 1, orientation: .up) }
-        
-        var transform = CGAffineTransform.identity
-        let size = newSize ?? self.size
-        
-        if (orientation == .down || orientation == .downMirrored) {
-            transform = transform.translatedBy(x: size.width, y: size.height)
-            transform = transform.rotated(by: .pi)
+        for singleMalaria in malariaPoints {
+            
+            
+            guard let x = singleMalaria.x else {print("no x");return}
+            guard let y = singleMalaria.y else {print("no y");return}
+            guard let w = singleMalaria.w else {print("no w");return}
+            guard let h = singleMalaria.h else {print("no w");return}
+            guard let confidence = singleMalaria.confidence else {print("no co");return}
+            
+            let cropImage = self.selectedGalleryImage.crop(rect: CGRect(x: x, y: y, width: w, height: h))
+            allMalariaCropsImages.append(cropImage)
+            maConfidenceNo.append(confidence)
         }
-        else if (orientation == .left || orientation == .leftMirrored) {
-            transform = transform.translatedBy(x: size.width, y: 0)
-            transform = transform.rotated(by: CGFloat.pi / 2)
-        }
-        else if (orientation == .right || orientation == .rightMirrored) {
-            transform = transform.translatedBy(x: 0, y: size.height)
-            transform = transform.rotated(by: -(CGFloat.pi / 2))
-        }
-        
-        if (orientation == .upMirrored || orientation == .downMirrored) {
-            transform = transform.translatedBy(x: size.width, y: 0);
-            transform = transform.scaledBy(x: -1, y: 1)
-        }
-        else if (orientation == .leftMirrored || orientation == .rightMirrored) {
-            transform = transform.translatedBy(x: size.height, y: 0)
-            transform = transform.scaledBy(x: -1, y: 1)
-        }
-        
-        // Now we draw the underlying CGImage into a new context, applying the transform calculated above.
-        guard let ctx = CGContext(data: nil, width: Int(size.width), height: Int(size.height),
-                                  bitsPerComponent: cgImage.bitsPerComponent, bytesPerRow: 0,
-                                  space: cgImage.colorSpace!, bitmapInfo: cgImage.bitmapInfo.rawValue)
-            else {
-                return UIImage(cgImage: cgImage, scale: 1, orientation: orientation)
-        }
-        
-        ctx.concatenate(transform)
-        
-        // Create a new UIImage from the drawing context
-        switch (orientation) {
-        case .left, .leftMirrored, .right, .rightMirrored:
-            ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.height, height: size.width))
-        default:
-            ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        }
-        
-        return UIImage(cgImage: ctx.makeImage() ?? cgImage, scale: 1, orientation: .up)
     }
 }

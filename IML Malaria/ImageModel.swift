@@ -87,12 +87,21 @@ struct ImagePoint : Codable {
     let w : Int?
     let x : Int?
     let y : Int?
+    let prediction: String?
+    let confidence: String?
     
     enum CodingKeys: String, CodingKey {
         case h = "h"
         case w = "w"
         case x = "x"
         case y = "y"
+        case prediction = "prediction"
+        case confidence =  "confidence"
     }
+    
+}
+
+struct MalariaDetails {
+    let malariaImages : [UIImage]?
     
 }

@@ -11,6 +11,8 @@ import UIKit
 class MalariaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var malariaImageView: UIImageView!
+    @IBOutlet weak var confidenceLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		zgDjdXj5Bjj3QpRim0w9X2kFfjY=
+		nN3K1SHK+eISYG/dCDDWAFi9UW0=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		5nsl85CUwbTHyCb/4uavavz52Gg=
+		n4QiPbQtjcWj3P7Tcvft1g9cANQ=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,35 +18,35 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		J8tvQcUw23PFE96uHKRcueQ5Q+I=
+		ALvnTXamQVDI4SE0Vl8ajtL+p+M=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Aeo-SN-GAz-view-74k-DO-ckP.nib</key>
 		<data>
-		+1g97utjqFJm2DhRDpQGtBL0jmA=
+		gGE3ZIMv3OWkLev+EjWMG80ggFE=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
-		2bRHjHWo8kUcHqv/hhSHjTlTtRs=
+		ngamHV62eGlh2h8zgkWTOxXpdDk=
+		</data>
+		<key>Base.lproj/Main.storyboardc/MalariaTableView.nib</key>
+		<data>
+		Ni3DPzeUKh/3WRDVCKNvRubZfyc=
 		</data>
 		<key>Base.lproj/Main.storyboardc/PKc-Ff-4ft-view-Cik-yc-XSA.nib</key>
 		<data>
-		l4PpN3fIPK5WNzTIj4y7kMXB5Ok=
+		fIe873ihfdrKNgCRKFKw6bht0Uk=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-Pyq-jm-14e.nib</key>
 		<data>
-		OqP2VuokPa994lrZ1oYnVdmYOXk=
+		09jzPqs36hZY+ew+9Io+NTjW/tA=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-Aeo-SN-GAz.nib</key>
 		<data>
-		s5Kz+9EZjfG/NpX1XmQ3Jje1cfs=
-		</data>
-		<key>Base.lproj/Main.storyboardc/UIViewController-PKc-Ff-4ft.nib</key>
-		<data>
-		8Il21w+oKIxt++peCBuyd5IfvYM=
+		RrCD67A0ELSZwF+gNvBqc/dzC60=
 		</data>
 		<key>Base.lproj/Main.storyboardc/uhr-GW-LNc-view-Fvp-2N-Nvj.nib</key>
 		<data>
-		q+1YK//Noust3rWTdNEJGsBXq0I=
+		hC4zs+4ohjhkF5TPyu7jTzH6efc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -63,14 +63,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G6kxuHjGr5taabg4+08UtzzE5PxTmXc3Eor87BFZxq8=
+			NP8PhQLsg5LmRNIADja0f7j++0zyoazG7E0VctaFikw=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZJxp4rtZFi69lXRTKR0iVTIO7TewvPXh9hTS17Ago9c=
+			ktK7psOJkVsgyyqykLhGdPrPPSL/NQmJL76742cX16M=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -84,56 +84,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JP21mqWg+kz6FxkdIrAIaUrb5gR/XdIlo2VHfsk2yu8=
+			JfmF+6AMYKsRy5bbhZ5+ySLZVn1wm4mLskJf92MGuJY=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Aeo-SN-GAz-view-74k-DO-ckP.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XYPbCkebVJet4kxESCpkw+RDZz5dRBX/NwOzXyz1GCw=
+			V2rkN5jX5qakA/kgvLwudNO3RQRKn7atJikEGZFwI7U=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AcEWe7vhudf/yv9hlZ3Ha/k4lF+6lhiEvYZjNoAVNmI=
+			QBzen9vrqlEPthGEON9hgAGPlRW5plb/HV8FWUscHzc=
+			</data>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/MalariaTableView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vHWkE85ZgyvjWNlrrtvilYqZIthpfy/2gTO8gRp274k=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/PKc-Ff-4ft-view-Cik-yc-XSA.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yN2WLOudNVWUcYBaAve/RIBIN2NFIUZKQ5k5d5dBIQI=
+			XsVBKGOna1oEftna5jP3xRpDcgVOW3iw2lOehF+CdWI=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-Pyq-jm-14e.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qvoUMydRpMKEZ+AQ8pc0qDNP6nNIUF7tpbT2QgA0+/0=
+			f9f1Ko7NHcsCqYI51JkV+0I1pCzAjb9af0TxoacmMpU=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UIViewController-Aeo-SN-GAz.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			foPpqytD6YRBVZM0HoJBQBGV89A7XaewwMtU9JfK0Mg=
-			</data>
-		</dict>
-		<key>Base.lproj/Main.storyboardc/UIViewController-PKc-Ff-4ft.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			wgQ2ppAIRQIa37tFnU3inU9LCMAhAFqlPHFHVcEBqEM=
+			sHxTOQeDMTKc5k21kopk9PhdGJTiQVf0P2rMOUPQAAw=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/uhr-GW-LNc-view-Fvp-2N-Nvj.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BMkKKgvizJnNXlC/id3rTnGlD3WlY2zC+CkXIw64870=
+			TEkT1sdM2/khYgZSHdEqnPpTiJHw198QvaZlZ2NjalU=
 			</data>
 		</dict>
 	</dict>

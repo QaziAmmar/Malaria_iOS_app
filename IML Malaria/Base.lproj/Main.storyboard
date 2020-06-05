@@ -92,75 +92,194 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flp-bu-GIP">
                                 <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="camBtnPressedWith_btn:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="2rQ-zy-ObO"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XVg-eV-jah">
-                                <rect key="frame" x="8" y="488" width="398" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCT-Ao-Tjv">
+                                <rect key="frame" x="20" y="498" width="89" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="camBtnPressedWith_btn:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="mJT-PC-yMs"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Zf-Qc-r7w" userLabel="Button Stack View">
+                                <rect key="frame" x="20" y="548.5" width="374" height="166"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCT-Ao-Tjv">
-                                        <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
-                                        <state key="normal" title="Select Image"/>
-                                        <connections>
-                                            <action selector="camBtnPressedWith_btn:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="mJT-PC-yMs"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC2-5c-OWv">
-                                        <rect key="frame" x="99.5" y="0.0" width="72" height="30"/>
-                                        <state key="normal" title="Count Cell"/>
-                                        <connections>
-                                            <action selector="countCellBtn:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="rYA-xZ-vwP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzJ-5X-jbA">
-                                        <rect key="frame" x="181.5" y="0.0" width="98" height="30"/>
-                                        <state key="normal" title="Check Malaria"/>
-                                        <connections>
-                                            <action selector="CheckSingleCell:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="n1n-sF-wBP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSF-l4-MVs">
-                                        <rect key="frame" x="290" y="0.0" width="108" height="30"/>
-                                        <state key="normal" title="Analyze Malaria"/>
-                                        <connections>
-                                            <segue destination="PKc-Ff-4ft" kind="show" id="sEb-uc-6aV"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-qF-81s">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC2-5c-OWv">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Count Cell">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="countCellBtn:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="rYA-xZ-vwP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.49448561670000002" green="0.72048032279999996" blue="0.77077472209999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="DC2-5c-OWv" firstAttribute="top" secondItem="Jvy-qF-81s" secondAttribute="top" id="6Rl-F6-Gaq"/>
+                                            <constraint firstAttribute="height" constant="50" id="6TJ-yg-SCB"/>
+                                            <constraint firstAttribute="bottom" secondItem="DC2-5c-OWv" secondAttribute="bottom" id="YWm-QU-tWH"/>
+                                            <constraint firstItem="DC2-5c-OWv" firstAttribute="leading" secondItem="Jvy-qF-81s" secondAttribute="leading" id="aEC-7R-6wm"/>
+                                            <constraint firstAttribute="trailing" secondItem="DC2-5c-OWv" secondAttribute="trailing" id="jQM-K0-Ae8"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC5-ks-vl9">
+                                        <rect key="frame" x="0.0" y="58" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzJ-5X-jbA">
+                                                <rect key="frame" x="119.5" y="7" width="135" height="36"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Check Malaria">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="CheckSingleCell:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="n1n-sF-wBP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.94329559799999996" green="0.42059707639999999" blue="0.32086229319999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="dzJ-5X-jbA" firstAttribute="centerY" secondItem="GC5-ks-vl9" secondAttribute="centerY" id="S01-l1-gb6"/>
+                                            <constraint firstItem="dzJ-5X-jbA" firstAttribute="centerX" secondItem="GC5-ks-vl9" secondAttribute="centerX" id="lv4-du-6Ga"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vve-cQ-oQO">
+                                        <rect key="frame" x="0.0" y="116" width="374" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSF-l4-MVs">
+                                                <rect key="frame" x="112" y="7" width="150" height="36"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Analyze Malaria">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="analyzeMalariaAction:" destination="Aeo-SN-GAz" eventType="touchUpInside" id="GtJ-d6-wre"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.14868941899999999" green="0.1578255892" blue="0.28144666550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="uSF-l4-MVs" firstAttribute="centerX" secondItem="Vve-cQ-oQO" secondAttribute="centerX" id="6ZM-h6-Qy7"/>
+                                            <constraint firstItem="uSF-l4-MVs" firstAttribute="centerY" secondItem="Vve-cQ-oQO" secondAttribute="centerY" id="9ga-lc-OaQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Count: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-GJ-c0u">
-                                <rect key="frame" x="20" y="568" width="89" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-25-Iee">
-                                <rect key="frame" x="117" y="568" width="4.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="y8d-Pl-zl2">
+                                <rect key="frame" x="34.5" y="734.5" width="345" height="97.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFP-9C-gTL">
+                                        <rect key="frame" x="0.0" y="0.0" width="165.5" height="97.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-GJ-c0u">
+                                                <rect key="frame" x="28.5" y="8" width="108" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-25-Iee">
+                                                <rect key="frame" x="78.5" y="34.5" width="8.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95970577000000001" green="0.66284900899999999" blue="0.1461580992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="dd3-GJ-c0u" firstAttribute="centerX" secondItem="AFP-9C-gTL" secondAttribute="centerX" id="4XA-Za-aWF"/>
+                                            <constraint firstItem="dd3-GJ-c0u" firstAttribute="top" secondItem="AFP-9C-gTL" secondAttribute="top" constant="8" id="Mfr-xW-25a"/>
+                                            <constraint firstItem="uh1-25-Iee" firstAttribute="top" secondItem="dd3-GJ-c0u" secondAttribute="bottom" id="dpe-7Y-Q70"/>
+                                            <constraint firstItem="uh1-25-Iee" firstAttribute="centerX" secondItem="AFP-9C-gTL" secondAttribute="centerX" id="uO8-hN-YVs"/>
+                                            <constraint firstAttribute="width" secondItem="AFP-9C-gTL" secondAttribute="height" multiplier="17:10" id="yeF-rq-bHr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X6-Cu-9Sd">
+                                        <rect key="frame" x="179.5" y="0.0" width="165.5" height="97.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malaria Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FW-kb-bRV">
+                                                <rect key="frame" x="11" y="8" width="144" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8X-n0-PFa">
+                                                <rect key="frame" x="83" y="34.5" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="P8X-n0-PFa" firstAttribute="top" secondItem="0FW-kb-bRV" secondAttribute="bottom" id="IUl-l7-4pN"/>
+                                            <constraint firstItem="P8X-n0-PFa" firstAttribute="centerX" secondItem="0FW-kb-bRV" secondAttribute="centerX" id="KOP-Zz-fHz"/>
+                                            <constraint firstItem="0FW-kb-bRV" firstAttribute="top" secondItem="4X6-Cu-9Sd" secondAttribute="top" constant="8" id="Tmn-0U-q4v"/>
+                                            <constraint firstItem="0FW-kb-bRV" firstAttribute="centerX" secondItem="4X6-Cu-9Sd" secondAttribute="centerX" id="dId-qN-zeC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="y8d-Pl-zl2" firstAttribute="centerX" secondItem="w1r-Et-5pD" secondAttribute="centerX" id="3lg-Cy-2Yo"/>
                             <constraint firstItem="cy8-YI-Uy3" firstAttribute="leading" secondItem="w1r-Et-5pD" secondAttribute="leading" id="7Ta-Ua-RUG"/>
                             <constraint firstItem="w1r-Et-5pD" firstAttribute="trailing" secondItem="cy8-YI-Uy3" secondAttribute="trailing" id="9kT-Bq-c4F"/>
-                            <constraint firstItem="w1r-Et-5pD" firstAttribute="trailing" secondItem="XVg-eV-jah" secondAttribute="trailing" constant="8" id="Bp5-ge-y9F"/>
-                            <constraint firstItem="dd3-GJ-c0u" firstAttribute="leading" secondItem="w1r-Et-5pD" secondAttribute="leading" constant="20" id="I2A-PI-FTP"/>
-                            <constraint firstItem="XVg-eV-jah" firstAttribute="top" secondItem="cy8-YI-Uy3" secondAttribute="bottom" id="LIP-CC-PEO"/>
+                            <constraint firstItem="wCT-Ao-Tjv" firstAttribute="leading" secondItem="w1r-Et-5pD" secondAttribute="leading" constant="20" id="Df6-ug-4qr"/>
+                            <constraint firstItem="w1r-Et-5pD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wCT-Ao-Tjv" secondAttribute="trailing" constant="305" id="HBC-47-CaS"/>
+                            <constraint firstItem="wCT-Ao-Tjv" firstAttribute="top" secondItem="cy8-YI-Uy3" secondAttribute="bottom" constant="10" id="ITz-C6-FOs"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="leading" secondItem="cy8-YI-Uy3" secondAttribute="leading" id="OlK-me-uSr"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="trailing" secondItem="cy8-YI-Uy3" secondAttribute="trailing" id="QSX-Fi-xcP"/>
-                            <constraint firstItem="XVg-eV-jah" firstAttribute="leading" secondItem="w1r-Et-5pD" secondAttribute="leading" constant="8" id="RtE-hd-Hrn"/>
-                            <constraint firstItem="uh1-25-Iee" firstAttribute="leading" secondItem="dd3-GJ-c0u" secondAttribute="trailing" constant="8" id="VkD-tJ-why"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="top" secondItem="cy8-YI-Uy3" secondAttribute="top" id="XRM-Da-EVv"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="centerX" secondItem="cy8-YI-Uy3" secondAttribute="centerX" id="Xeq-jy-eEo"/>
+                            <constraint firstItem="2Zf-Qc-r7w" firstAttribute="leading" secondItem="w1r-Et-5pD" secondAttribute="leading" constant="20" id="bvs-qV-Axa"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="bottom" secondItem="cy8-YI-Uy3" secondAttribute="bottom" id="kPS-HF-sFr"/>
                             <constraint firstItem="flp-bu-GIP" firstAttribute="centerY" secondItem="cy8-YI-Uy3" secondAttribute="centerY" id="lR2-lu-BH6"/>
-                            <constraint firstItem="XVg-eV-jah" firstAttribute="centerX" secondItem="74k-DO-ckP" secondAttribute="centerX" id="oOP-Fu-yXD"/>
-                            <constraint firstItem="uh1-25-Iee" firstAttribute="centerY" secondItem="dd3-GJ-c0u" secondAttribute="centerY" id="qHa-qO-b28"/>
+                            <constraint firstItem="y8d-Pl-zl2" firstAttribute="top" secondItem="2Zf-Qc-r7w" secondAttribute="bottom" constant="20" id="mGn-cW-Kwd"/>
+                            <constraint firstItem="w1r-Et-5pD" firstAttribute="bottom" secondItem="y8d-Pl-zl2" secondAttribute="bottom" constant="30" id="vLP-fD-r2m"/>
+                            <constraint firstItem="w1r-Et-5pD" firstAttribute="trailing" secondItem="2Zf-Qc-r7w" secondAttribute="trailing" constant="20" id="wwr-0H-Tck"/>
+                            <constraint firstItem="AFP-9C-gTL" firstAttribute="width" secondItem="74k-DO-ckP" secondAttribute="width" multiplier="0.4" id="x0X-QE-CHw"/>
                             <constraint firstItem="cy8-YI-Uy3" firstAttribute="top" secondItem="w1r-Et-5pD" secondAttribute="top" id="zI2-mz-jaQ"/>
-                            <constraint firstItem="dd3-GJ-c0u" firstAttribute="top" secondItem="XVg-eV-jah" secondAttribute="bottom" constant="50" id="zPw-m4-uhC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w1r-Et-5pD"/>
                     </view>
@@ -168,7 +287,9 @@
                     <connections>
                         <outlet property="cellCount" destination="uh1-25-Iee" id="M7E-Z4-1OR"/>
                         <outlet property="cellCountLbl" destination="dd3-GJ-c0u" id="eGw-tz-ZKO"/>
+                        <outlet property="malariaCountLbl" destination="P8X-n0-PFa" id="cln-gi-xRp"/>
                         <outlet property="userDp" destination="cy8-YI-Uy3" id="Gtm-3z-mvE"/>
+                        <segue destination="PKc-Ff-4ft" kind="show" id="DDG-7I-UVB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJZ-Op-4OH" sceneMemberID="firstResponder"/>
@@ -178,7 +299,7 @@
         <!--Malaria Table View-->
         <scene sceneID="yEs-Px-GPU">
             <objects>
-                <viewController id="PKc-Ff-4ft" customClass="MalariaTableView" customModule="IML_Malaria" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MalariaTableView" id="PKc-Ff-4ft" customClass="MalariaTableView" customModule="IML_Malaria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cik-yc-XSA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,29 +315,62 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-aT-mXt">
-                                                    <rect key="frame" x="266" y="8" width="128" height="128"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-Rs-D78" customClass="DesignableView" customModule="IML_Malaria" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="394" height="124"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-J6-RH5">
+                                                            <rect key="frame" x="5" y="2" width="384" height="120"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Riu-jr-IQw">
+                                                                    <rect key="frame" x="0.0" y="34.5" width="207.5" height="51"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malaria Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYS-Uv-uvn">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="207.5" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence No: 0.6987452" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXM-s3-Urg">
+                                                                            <rect key="frame" x="0.0" y="30.5" width="207.5" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-aT-mXt">
+                                                                    <rect key="frame" x="264" y="0.0" width="120" height="120"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="120" id="00Y-2z-OC3"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="c8V-Dl-klK"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="FfY-c0-wvt"/>
-                                                        <constraint firstAttribute="width" constant="128" id="oIF-1p-8Ok"/>
+                                                        <constraint firstItem="YLW-J6-RH5" firstAttribute="top" secondItem="IZn-Rs-D78" secondAttribute="top" constant="2" id="5PN-AR-huJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="YLW-J6-RH5" secondAttribute="bottom" constant="2" id="E1c-N8-fOX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YLW-J6-RH5" secondAttribute="trailing" constant="5" id="G9t-iJ-D6e"/>
+                                                        <constraint firstItem="YLW-J6-RH5" firstAttribute="leading" secondItem="IZn-Rs-D78" secondAttribute="leading" constant="5" id="T3m-DQ-elW"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malaria Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXM-s3-Urg">
-                                                    <rect key="frame" x="33" y="61.5" width="89" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="5MH-aT-mXt" secondAttribute="trailing" constant="20" id="36c-tk-nru"/>
-                                                <constraint firstItem="uXM-s3-Urg" firstAttribute="leading" secondItem="6YO-LF-iSA" secondAttribute="leadingMargin" constant="13" id="JdT-f3-i6Y"/>
-                                                <constraint firstItem="uXM-s3-Urg" firstAttribute="centerY" secondItem="6YO-LF-iSA" secondAttribute="centerY" id="khF-aP-Dmt"/>
-                                                <constraint firstAttribute="bottom" secondItem="5MH-aT-mXt" secondAttribute="bottom" constant="8" id="nnS-qZ-U6C"/>
-                                                <constraint firstItem="5MH-aT-mXt" firstAttribute="top" secondItem="6YO-LF-iSA" secondAttribute="top" constant="8" id="uHz-cB-bMN"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZn-Rs-D78" secondAttribute="trailing" constant="10" id="F5c-m0-1rU"/>
+                                                <constraint firstItem="IZn-Rs-D78" firstAttribute="top" secondItem="6YO-LF-iSA" secondAttribute="top" constant="10" id="HLS-6s-wow"/>
+                                                <constraint firstAttribute="bottom" secondItem="IZn-Rs-D78" secondAttribute="bottom" constant="10" id="Pa3-Wz-7r4"/>
+                                                <constraint firstItem="IZn-Rs-D78" firstAttribute="leading" secondItem="6YO-LF-iSA" secondAttribute="leading" constant="10" id="uvz-an-9f6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="confidenceLbl" destination="uXM-s3-Urg" id="zqI-X3-Bzq"/>
                                             <outlet property="malariaImageView" destination="5MH-aT-mXt" id="d1D-Vs-yKP"/>
                                         </connections>
                                     </tableViewCell>

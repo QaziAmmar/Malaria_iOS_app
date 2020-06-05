@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
 options: "9873234d378718a2542ddb0bf044461c"
-build_time: [1586503789, 203220000]
+build_time: [1591273914, 331375000]
 inputs:
   "/Users/qaziammar/Documents/Xcode/IML Malaria/Pods/Alamofire/Source/AFError.swift": [1574703249, 0]
   "/Users/qaziammar/Documents/Xcode/IML Malaria/Pods/Alamofire/Source/Alamofire.swift": [1574703249, 0]
